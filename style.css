@@ -104,6 +104,10 @@ h3 {
     float: left;
 }
 
+#typeddata {
+	width:600px;
+	height:400px;
+}	
 #footer {
     clear: both;
 }

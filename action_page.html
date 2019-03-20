@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <body>
+
+        <div id="js">
+            <script>
+                var x = location.search;
+                document.write("Welcome  ")
+                    // document.getElementById("demo").innerHTML = x;
+                for (var i = 11; i < x.length; i++) {
+                    if (x.charAt(i) == '&') {
+                        document.write('   ');
+                        i = i + 10;
+                    }
+                    var m = x.charAt(i);
+                    document.write(m);
+
+                }
+            </script>
+
+        </div>
+        <div id="a1">
+            <p>
+                Type the given paragraph in the text box given below.
+                <p>
+                    Based on which your Typing speed is Displayed after 1 minute.
+                </p>
+            </p>
+        </div>
+        <h1>The timer will start on clicking the button below.Start typing in the box below as soon as the timer starts.</h1>
+        <button onclick="onTimer()">Click The button to start the timer</button>
+        <div id="mycounter"></div>
+        <script>
+            i = 60;
+
+            function onTimer() {
+                document.getElementById('mycounter').innerHTML = i;
+                i--;
+                if (i < 0) {
+                    alert('Your Typing speed is---!');
+                    alert('Wanna Try again');
+                    window.location.href = "index.html";
+                } else {
+                    setTimeout(onTimer, 1010);
+                }
+            }
+        </script>
+
+
+
+        <textarea id="typeddata" contenteditable="true" text-align="left" spellcheck="true"></textarea>
+    </body>
+</head>
+
+</html>

@@ -104,10 +104,19 @@ h3 {
     float: left;
 }
 
+#js {
+    background-color: #9fd167;
+    width: 200px;
+    height: 200px;
+    text-decoration: underline;
+}
+
 #typeddata {
-	width:600px;
-	height:400px;
-}	
+    padding: 100;
+    width: 600px;
+    height: 400px;
+}
+
 #footer {
     clear: both;
 }

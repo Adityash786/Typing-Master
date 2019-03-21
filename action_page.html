@@ -41,15 +41,32 @@
                 document.getElementById('mycounter').innerHTML = i;
                 i--;
                 if (i < 0) {
-                    alert('Your Typing speed is---!');
-                    alert('Wanna Try again');
+            
                     window.location.href = "index.html";
                 } else {
-                    setTimeout(onTimer, 1010);
+                    setTimeout(onTimer, 1000);
                 }
             }
         </script>
         <textarea id="typeddata" contenteditable="true" text-align="left" spellcheck="true"></textarea>
+		<input type="button" name="ctr" value="Count Words" onClick="countWords();">
+		<output id="wordcount" type="text" value="" size="6" contenteditable="false"> 
+		<script>
+			function countWords()
+				{
+					var f = document.getElementById("typeddata").value;
+					var j=0,wrdcount=0;
+					for(j=0;j<f.length;j++)
+						{
+							if(j>0 && f.charAt(j)==" " && f.charAt(j-1)==" ")
+							{continue;}
+							if(f.charAt(j)==" ")
+								{wrdcount++;
+								}
+						}
+					document.getElementById("wordcount").value=wrdcount+1;
+				}
+		</script>
     </body>
 </head>
 

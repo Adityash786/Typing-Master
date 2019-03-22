@@ -34,24 +34,26 @@
         <h1>The timer will start on clicking the button below.Start typing in the box below as soon as the timer starts.</h1>
         <button onclick="onTimer()">Click The button to start the timer</button>
         <div id="mycounter"></div>
-        <script>
-            i = 60;
-
-            function onTimer() {
-                document.getElementById('mycounter').innerHTML = i;
-                i--;
-                if (i < 0) {
-            
-                    window.location.href = "index.html";
-                } else {
-                    setTimeout(onTimer, 1000);
-                }
-            }
-        </script>
-        <textarea id="typeddata" contenteditable="true" text-align="left" spellcheck="true"></textarea>
+		<textarea id="typeddata" contenteditable="true" text-align="left" spellcheck="true"></textarea>
 		<input type="button" name="ctr" value="Count Words" onClick="countWords();">
 		<output id="wordcount" type="text" value="" size="6" contenteditable="false"> 
 		<script>
+        
+            i = 60;
+
+            function onTimer() {
+				document.getElementById('mycounter').innerHTML = i;
+                i--;
+                if (i == -1) {
+					
+					document.getElementById("typeddata").disabled=true;
+					clearTimeout(t);
+                } else {
+                    t=setTimeout(onTimer, 1000);
+                }
+            }
+        
+        
 			function countWords()
 				{
 					var f = document.getElementById("typeddata").value;
